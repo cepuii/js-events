@@ -15,11 +15,14 @@ const saveTodos = todo => {
 }
 
 const deleteTodo = event => {
-    let title = event.target.previousSibling.previousSibling.innerText;
+    let title = event.target.previousSibling.previousSibling.textContent;
+    let taskText = event.target.previousSibling.textContent;
     let todos = getTodos();
-    let id = todos.findIndex(element => element.title === title);
-    todos.splice(id, 1);
-    localStorage.setItem('todos', JSON.stringify(todos));
+    let id = todos.findIndex(element => element.title === title && element.taskText === taskText);
+    if(id != -1){
+        todos.splice(id, 1);
+        localStorage.setItem('todos', JSON.stringify(todos));
+    }
 }
 
 const addTodoOnPage = formData => {
