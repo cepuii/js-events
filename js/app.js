@@ -16,9 +16,8 @@ const saveTodos = todo => {
 
 const deleteTodo = event => {
     let title = event.target.previousSibling.previousSibling.innerText;
-    let text = event.target.previousSibling.innerText
     let todos = getTodos();
-    let id = todos.findIndex(element => element.title === title && element.taskText === text);
+    let id = todos.findIndex(element => element.title === title);
     todos.splice(id, 1);
     localStorage.setItem('todos', JSON.stringify(todos));
 }
@@ -41,7 +40,7 @@ const addTodoOnPage = formData => {
 
     const deleteButton = document.createElement('button');
     deleteButton.classList.add('btn', 'btn-light', 'deleteButton');
-    deleteButton.addEventListener('click', () => {
+    deleteButton.addEventListener('click', (event) => {
         deleteTodo(event);
         location.reload();
     });
@@ -58,7 +57,7 @@ window.addEventListener('DOMContentLoaded', () =>{
 
    
 const form = document.querySelector('.addTodo');
-form.addEventListener('submit', ()=>{
+form.addEventListener('submit', (event)=>{
     const formData = {}
     const {title, taskText} = event.target.children;
     formData.title = title.value;
