@@ -1,16 +1,36 @@
+body{
+    background-color: #6c757d;
+}
+input, textarea, .todo-container {
+    padding: 10px;
+    max-width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+  }
+
+  h3, p{
+    margin: 0;
+    padding: 0;
+  }
+ 
 .container{
+    width: 70%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    margin: 50px;
+    align-items: self-start;
+    margin: 50px auto;
 }
 
 .addTodo{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: auto 1fr; 
+    grid-template-rows: auto auto auto; 
+    grid-gap: 10px;
+    padding: 10px;
+    width: 100%;
 }
 
 .formItem{
@@ -19,20 +39,32 @@
 }
 
 .todo-container{
-    border: 1px solid;
-    border-radius: 20px;
-    width: 70vh;
     margin: 10px;
-    padding: 20px;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #212529;
+    box-shadow: 2px 2px 2px #000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #212529;
 }
 
 .addButton{
+    margin: 10px;
     border-radius: 5px;
-    background-color: slateblue;
+    background-color: darkcyan;
 }
 
 .deleteButton{
-    border-radius: 5px;
-    background-color: salmon;
+    align-self: flex-end;
+}
+
+.todos{
+    width: 100%;
+}
+
+.todoItem{
+    overflow-wrap: anywhere;
     color: white;
 }
