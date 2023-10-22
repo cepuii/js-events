@@ -50,12 +50,8 @@ const addTodoOnPage = formData => {
     todosList.appendChild(div);
 }
 
-window.addEventListener('DOMContentLoaded', () =>{
-    console.log(getTodos());
-    getTodos().forEach(element => addTodoOnPage(element));
-})
+window.addEventListener('DOMContentLoaded', () => getTodos().forEach(element => addTodoOnPage(element)));
 
-   
 const form = document.querySelector('.addTodo');
 form.addEventListener('submit', (event)=>{
     const formData = {}
