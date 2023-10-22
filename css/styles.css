@@ -51,9 +51,8 @@ input, textarea, .todo-container {
 }
 
 .addButton{
-    margin: 10px;
-    border-radius: 5px;
-    background-color: darkcyan;
+    grid-row: 3 / 4;
+    grid-column: 2 / 3;
 }
 
 .deleteButton{
