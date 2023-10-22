@@ -15,8 +15,9 @@ const saveTodos = todo => {
 }
 
 const deleteTodo = event => {
-    let title = event.target.previousSibling.previousSibling.textContent;
-    let taskText = event.target.previousSibling.textContent;
+    const parentElement = event.target.parentElement;
+    let title = parentElement.querySelector('h3').textContent;
+    let taskText = parentElement.querySelector('p').textContent;
     let todos = getTodos();
     let id = todos.findIndex(element => element.title === title && element.taskText === taskText);
     if(id != -1){
